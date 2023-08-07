@@ -1,7 +1,7 @@
 # 0x00. AirBnB clone - The console
 **Creating a simple command interpreter to manage AirBnB objects**
 
-## <p align="center">![alt text](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230807%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230807T064544Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7857de2d9e7d6d00ebecd314e9f441a4ae62af1ea39474e383c6dcb574a9787c)</p>
+## <p align="center">![alt text](https://github.com/Omewah/AirBnB_clone/blob/main/web_static/images/hbnb.png?raw=true)</p>
 
 ## Background Context
 This is the first step towards building your first full web application: the **AirBnB clone**. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration
