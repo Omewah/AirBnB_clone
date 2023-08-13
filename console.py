@@ -77,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print(storage.all()[str_uptd])
 
-    def d0_destroy(self, line):
+    def do_destroy(self, line):
         """Delete instance details: use class name and id"""
         split_str = line.split()
         if len(split_str) < 1:
