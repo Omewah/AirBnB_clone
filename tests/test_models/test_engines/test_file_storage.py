@@ -85,7 +85,7 @@ class FileStorageTests(unittest.TestCase):
         with self.assertRaises(TypeError) as err:
             FileStorage.save(self, 100)
 
-        self.assertEqual(str(err.exception), message)
+        self.assertEqual(str(err.exception), 'save() takes 1 positional argument but 2 were given')
 
 
 if __name__ == '__main__':
