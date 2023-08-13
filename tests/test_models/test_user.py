@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 #!/usr/bin/python3
 """Unittest for user class"""
 
@@ -10,6 +9,7 @@ from models.base_model import BaseModel
 from datetime import datetime
 from time import sleep
 import uuid
+
 
 class TestUserinstantiation(unittest.TestCase):
     """Tests for instantiation"""
@@ -125,8 +125,10 @@ class TestUserinstantiation(unittest.TestCase):
         self.assertEqual(user_dict["__class__"], "User")
         self.assertEqual(type(user_dict["created_at"]), str)
         self.assertEqual(type(user_dict["updated_at"]), str)
-        self.assertEqual(user_dict["created_at"], user.created_at.strftime(time_stmp))
-        self.assertEqual(user_dict["updated_at"], user.updated_at.strftime(time_stmp))
+        self.assertEqual
+        (user_dict["created_at"], user.created_at.strftime(time_stmp))
+        self.assertEqual
+        (user_dict["updated_at"], user.updated_at.strftime(time_stmp))
 
 
 if __name__ == "__main__":

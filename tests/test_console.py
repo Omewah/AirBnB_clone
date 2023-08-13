@@ -45,5 +45,6 @@ class TestHBNBCommand(unittest.TestCase):
             self.assertTrue("instance id missing **" in str.getvalue())
             str.truncate(0)
 
+
 if __name__ == "__main__":
     unittest.main()

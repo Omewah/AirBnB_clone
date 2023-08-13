@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Unittest for Place class"""
 
 import unittest
@@ -98,6 +98,7 @@ class TestPlace(unittest.TestCase):
         namePlace = Place()
         with self.assertRaises(TypeError):
             namePlace.save(None)
+
 
 class TestPlacetodict(unittest.TestCase):
     """Testing Place class dict methods"""

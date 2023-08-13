@@ -9,6 +9,7 @@ from models.state import State
 from models import storage
 from models.base_model import BaseModel
 
+
 class TestStateinstantiation(unittest.TestCase):
     """Unittests for instantiation"""
 
@@ -69,7 +70,8 @@ class TestStateinstantiation(unittest.TestCase):
     def testinstantiationwithkwargs(self):
         date_time = datetime.today()
         date_time_iso = date_time.isoformat()
-        state = State(id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        state =
+        State(id="345", created_at=date_time_iso, updated_at=date_time_iso)
         self.assertEqual(state.id, "345")
         self.assertEqual(state.created_at, date_time)
         self.assertEqual(state.updated_at, date_time)
@@ -85,7 +87,7 @@ class TestStateinstantiation(unittest.TestCase):
         self.assertEqual(str(type(state)), "<class 'models.state.State'>")
         self.assertIsInstance(state, State)
         self.assertTrue(issubclass(type(state), BaseModel))
-    
+
 
 if __name__ == "__main__":
     unittest.main()

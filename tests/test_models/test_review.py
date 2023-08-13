@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Unittest for Review class"""
 
 import unittest
@@ -110,7 +110,8 @@ class TestReview_instantiation(unittest.TestCase):
     def test_instantiation_with_kwargs(self):
         date_time = datetime.today()
         date_time_iso = date_time.isoformat()
-        review = Review(id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        review =
+        Review(id="345", created_at=date_time_iso, updated_at=date_time_iso)
         self.assertEqual(review.id, "345")
         self.assertEqual(review.created_at, date_time)
         self.assertEqual(review.updated_at, date_time)
@@ -118,6 +119,7 @@ class TestReview_instantiation(unittest.TestCase):
     def test_instantiation_with_None_kwargs(self):
         with self.assertRaises(TypeError):
             Review(id=None, created_at=None, updated_at=None)
+
 
 class TestReview(unittest.TestCase):
     """Review model class test case"""
@@ -164,6 +166,7 @@ class TestReview(unittest.TestCase):
 
     def testtodict(self):
         self.assertTrue('to_dict' in dir(self.review))
+
 
 if __name__ == "__main__":
     unittest.main()

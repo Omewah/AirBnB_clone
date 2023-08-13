@@ -13,6 +13,7 @@ import json
 import os
 import re
 
+
 class TestBaseModelInstantiation(unittest.TestCase):
     """Unittests for testing instantiation"""
 
@@ -20,7 +21,8 @@ class TestBaseModelInstantiation(unittest.TestCase):
         """Test IsInstance"""
         bm1 = BaseModel()
         self.assertIsInstance(bm1, BaseModel)
-        self.assertEqual(str(type(bm1)), "<class 'models.base_model.BaseModel'>")
+        self.assertEqual
+        (str(type(bm1)), "<class 'models.base_model.BaseModel'>")
         self.assertTrue(issubclass(type(bm1), BaseModel))
 
     def testContainsId(self):
@@ -123,7 +125,8 @@ class TestBaseModelInstantiation(unittest.TestCase):
     def testinstantiationwithkwargs(self):
         date_time = datetime.today()
         date_time_iso = date_time.isoformat()
-        bm1 = BaseModel(id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        bm1 = BaseModel
+        (id="345", created_at=date_time_iso, updated_at=date_time_iso)
         self.assertEqual(bm1.id, "345")
         self.assertEqual(bm1.created_at, date_time)
         self.assertEqual(bm1.updated_at, date_time)
@@ -135,10 +138,12 @@ class TestBaseModelInstantiation(unittest.TestCase):
     def testinstantiationwithargsandkwargs(self):
         date_time = datetime.today()
         date_time_iso = date_time.isoformat()
-        bm1 = BaseModel("12", id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        bm1 = BaseModel
+        ("12", id="345", created_at=date_time_iso, updated_at=date_time_iso)
         self.assertEqual(bm1.id, "345")
         self.assertEqual(bm1.created_at, date_time)
         self.assertEqual(bm1.updated_at, date_time)
+
 
 class TestBaseModelInstancePrint(unittest.TestCase):
     """Unittest for testing the string init method"""
@@ -146,7 +151,8 @@ class TestBaseModelInstancePrint(unittest.TestCase):
     def teststringreturn(self):
         """Unittest for testing string init method."""
         bm1 = BaseModel()
-        str_init = "[{}] ({}) {}".format("BaseModel", bm1.id, str(bm1.__dict__))
+        str_init =
+        "[{}] ({}) {}".format("BaseModel", bm1.id, str(bm1.__dict__))
         self.assertEqual(str(bm1), str_init)
 
     def teststring(self):
@@ -154,6 +160,7 @@ class TestBaseModelInstancePrint(unittest.TestCase):
         bm1 = BaseModel()
         string = "[BaseModel] ({}) {}".format(bm1.id, bm1.__dict__)
         self.assertEqual(string, str(bm1))
+
 
 if __name__ == "__main__":
     unittest.main()

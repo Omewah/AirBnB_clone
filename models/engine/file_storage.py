@@ -23,6 +23,7 @@ class_dict = {
     "State": State
 }
 
+
 class FileStorage:
     """The file storage class"""
     __file_path = "file.json"
@@ -54,9 +55,10 @@ class FileStorage:
             return
             try:
                 with open(type(self).__file_path, "r") as file:
-                    deserial_data = json.load(file)
-                    for obj_key, obj_inst in deserial_data.items():
-                        reload_inst = self.class_dict[obj_inst['__class__']](**obj_inst)
-                        type(self).__objects[obj_key] = reload_inst
+                    deserial = json.load(file)
+                    for obj_key, obj_inst in deserial.items():
+                        inst =
+                        self.class_dict[obj_inst['__class__']](**obj_inst)
+                        type(self).__objects[obj_key] = inst
             except Exception:
                 pass

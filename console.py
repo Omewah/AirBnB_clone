@@ -153,15 +153,17 @@ class HBNBCommand(cmd.Cmd):
         if input is None:
             return
 
-        command_regex = "^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
-        params_regex = """^"([^"]+)"(?:,\s*(?:"([^"]+)"|(\{[^}]+\}))(?:,\s*(?:("?[^"]+"?)))?)?"""
+        command_regex = r"^([A-Za-z]+)\.([a-z]+)\(([^(]*)\)"
+        params_regex = r"""^"([^"]+)"(?:,\s*(?:"([^"]+)
+        "|(\{[^}]+\}))(?:,\s*(?:"[^"]+"))?)?"""
         c_match = re.match(command_regex, input)
         if not c_match:
             super().default(input)
             return
         cmdIN, method, paramIN = c_match.groups()
         p_match = re.match(params_regex, paramIN)
-        param_ext = [item for item in p_match.groups() if item] if p_match else []
+        param_ext =
+        [item for item in p_match.groups() if item] if p_match else []
 
         cmd = " ".join([cmdIN] + param_ext)
 

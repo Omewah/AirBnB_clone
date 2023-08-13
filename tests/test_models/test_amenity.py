@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Unittest for the Amenity Class"""
 
 import unittest
@@ -12,6 +12,7 @@ import re
 import json
 from models.engine.file_storage import FileStorage
 from models import storage
+
 
 class TestAmenity(unittest.TestCase):
     """Test the Amenity class model"""
@@ -38,6 +39,7 @@ class TestAmenity(unittest.TestCase):
         self.assertIsNotNone(Amenity.__doc__)
 
     arm = Amenity()
+
     def testhasattributes(self):
         """Check for existing attributes"""
         self.assertTrue(hasattr(self.arm, 'name'))

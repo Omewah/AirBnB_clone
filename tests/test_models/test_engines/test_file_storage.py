@@ -76,7 +76,8 @@ class FileStorageTests(unittest.TestCase):
         self.assertNotEqual(reload_obj, FileStorage._FileStorage__objects)
         storage.reload()
         for key_kwarg, value_kwarg in storage.all().items():
-            self.assertEqual(reload_obj[key_kwarg].to_dict(), value_kwarg.to_dict())
+            self.assertEqual
+            (reload_obj[key_kwarg].to_dict(), value_kwarg.to_dict())
 
     def testSaveSelf(self):
         """Check save"""
