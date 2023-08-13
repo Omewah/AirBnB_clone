@@ -92,11 +92,11 @@ class TestReview_instantiation(unittest.TestCase):
         self.assertLess(review_1.updated_at, review_2.updated_at)
 
     def test_str_representation(self):
-        date_time = datetime.today()
-        time_stmp = repr(date_time)
+        dtme = datetime.today()
+        time_stmp = repr(dtme)
         review = Review()
         review.id = "123456"
-        review.created_at = review.updated_at = date_time
+        review.created_at = review.updated_at = dtme
         review_str = review.__str__()
         self.assertIn("[Review] (123456)", review_str)
         self.assertIn("'id': '123456'", review_str)
@@ -108,13 +108,12 @@ class TestReview_instantiation(unittest.TestCase):
         self.assertNotIn(None, review.__dict__.values())
 
     def test_instantiation_with_kwargs(self):
-        date_time = datetime.today()
-        date_time_iso = date_time.isoformat()
-        review =
-        Review(id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        dtme = datetime.today()
+        dtme_iso = dtme.isoformat()
+        review = Review(id="345", created_at=dtme_iso, updated_at=dtme_iso)
         self.assertEqual(review.id, "345")
-        self.assertEqual(review.created_at, date_time)
-        self.assertEqual(review.updated_at, date_time)
+        self.assertEqual(review.created_at, dtme)
+        self.assertEqual(review.updated_at, dtme)
 
     def test_instantiation_with_None_kwargs(self):
         with self.assertRaises(TypeError):

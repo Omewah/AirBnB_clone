@@ -52,11 +52,11 @@ class TestStateinstantiation(unittest.TestCase):
         self.assertLess(state_1.updated_at, state_2.updated_at)
 
     def teststringrepr(self):
-        date_time = datetime.today()
-        time_stmp = repr(date_time)
+        dtme = datetime.today()
+        time_stmp = repr(dtme)
         state = State()
         state.id = "123456"
-        state.created_at = state.updated_at = date_time
+        state.created_at = state.updated_at = dtme
         ststr = state.__str__()
         self.assertIn("[State] (123456)", ststr)
         self.assertIn("'id': '123456'", ststr)
@@ -68,13 +68,12 @@ class TestStateinstantiation(unittest.TestCase):
         self.assertNotIn(None, state.__dict__.values())
 
     def testinstantiationwithkwargs(self):
-        date_time = datetime.today()
-        date_time_iso = date_time.isoformat()
-        state =
-        State(id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        dtme = datetime.today()
+        dtme_iso = dtme.isoformat()
+        state = State(id="345", created_at=dtme_iso, updated_at=dtme_iso)
         self.assertEqual(state.id, "345")
-        self.assertEqual(state.created_at, date_time)
-        self.assertEqual(state.updated_at, date_time)
+        self.assertEqual(state.created_at, dtme)
+        self.assertEqual(state.updated_at, dtme)
 
     def testinstantiationwithNonekwargs(self):
         with self.assertRaises(TypeError):

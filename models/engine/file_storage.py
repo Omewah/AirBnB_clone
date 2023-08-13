@@ -44,8 +44,8 @@ class FileStorage:
     def save(self):
         """This serializes object instances to the JSON file"""
         serial_dict = []
-        for obj_inst in type(self).__objects.values():
-            serial_dict.append(obj_inst.to_dict())
+        for in_o in type(self).__objects.values():
+            serial_dict.append(in_o.to_dict())
         with open(type(self).__file_path, "w", encoding='utf-8') as file:
             json.dump(serial_dict, file)
 
@@ -56,9 +56,8 @@ class FileStorage:
             try:
                 with open(type(self).__file_path, "r") as file:
                     deserial = json.load(file)
-                    for obj_key, obj_inst in deserial.items():
-                        inst =
-                        self.class_dict[obj_inst['__class__']](**obj_inst)
+                    for obj_key, in_o in deserial.items():
+                        inst = self.class_dict[in_o['__class__']](**in_o)
                         type(self).__objects[obj_key] = inst
             except Exception:
                 pass

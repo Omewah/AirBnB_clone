@@ -23,25 +23,25 @@ class TestHBNBCommand(unittest.TestCase):
 
     def testquitcommand(self):
         with patch('sys.stdout', new=StringIO()) as str:
-            self.assertTrue(self.console.quit_cls(''))
+            self.assertTrue(self.console.do_quit(''))
             self.assertEqual(str.getvalue().strip(), "Thanks and Good-Bye!")
 
     def testblankcommand(self):
-        self.assertFalse(self.console.blank_cmd())
+        self.assertFalse(self.console.emptyline())
 
     def testviewinstcommand(self):
         with patch('sys.stdout', new=StringIO()) as str:
-            self.console.view_inst('')
+            self.console.do_show('')
             self.assertTrue("class name missing **" in str.getvalue())
             str.truncate(0)
 
         with patch('sys.stdout', new=StringIO()) as str:
-            self.console.view_inst('InvalidClass')
+            self.console.do_show('InvalidClass')
             self.assertTrue("class doesn't exist **" in str.getvalue())
             str.truncate(0)
 
         with patch('sys.stdout', new=StringIO()) as str:
-            self.console.view_inst('BaseModel')
+            self.console.do_show('BaseModel')
             self.assertTrue("instance id missing **" in str.getvalue())
             str.truncate(0)
 

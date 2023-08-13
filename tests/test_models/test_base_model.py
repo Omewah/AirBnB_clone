@@ -107,11 +107,11 @@ class TestBaseModelInstantiation(unittest.TestCase):
         self.assertEqual(datetime, type(BaseModel().updated_at))
 
     def teststringrepr(self):
-        date_time = datetime.today()
-        time_stmp = repr(date_time)
+        d = datetime.today()
+        time_stmp = repr(d)
         bm1 = BaseModel()
         bm1.id = "123456"
-        bm1.created_at = bm1.updated_at = date_time
+        bm1.created_at = bm1.updated_at = d
         bm1str = bm1.__str__()
         self.assertIn("[BaseModel] (123456)", bm1str)
         self.assertIn("'id': '123456'", bm1str)
@@ -123,26 +123,24 @@ class TestBaseModelInstantiation(unittest.TestCase):
         self.assertNotIn(None, bm1.__dict__.values())
 
     def testinstantiationwithkwargs(self):
-        date_time = datetime.today()
-        date_time_iso = date_time.isoformat()
-        bm1 = BaseModel
-        (id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        d = datetime.today()
+        d_iso = d.isoformat()
+        bm1 = BaseModel(id="345", created_at=d_iso, updated_at=d_iso)
         self.assertEqual(bm1.id, "345")
-        self.assertEqual(bm1.created_at, date_time)
-        self.assertEqual(bm1.updated_at, date_time)
+        self.assertEqual(bm1.created_at, d)
+        self.assertEqual(bm1.updated_at, d)
 
     def testinstantiationwithNonekwargs(self):
         with self.assertRaises(TypeError):
             BaseModel(id=None, created_at=None, updated_at=None)
 
     def testinstantiationwithargsandkwargs(self):
-        date_time = datetime.today()
-        date_time_iso = date_time.isoformat()
-        bm1 = BaseModel
-        ("12", id="345", created_at=date_time_iso, updated_at=date_time_iso)
+        d = datetime.today()
+        d_iso = d.isoformat()
+        bm1 = BaseModel("12", id="345", created_at=d_iso, updated_at=d_iso)
         self.assertEqual(bm1.id, "345")
-        self.assertEqual(bm1.created_at, date_time)
-        self.assertEqual(bm1.updated_at, date_time)
+        self.assertEqual(bm1.created_at, d)
+        self.assertEqual(bm1.updated_at, d)
 
 
 class TestBaseModelInstancePrint(unittest.TestCase):
@@ -151,9 +149,8 @@ class TestBaseModelInstancePrint(unittest.TestCase):
     def teststringreturn(self):
         """Unittest for testing string init method."""
         bm1 = BaseModel()
-        str_init =
-        "[{}] ({}) {}".format("BaseModel", bm1.id, str(bm1.__dict__))
-        self.assertEqual(str(bm1), str_init)
+        strinit = "[{}] ({}) {}".format("BaseModel", bm1.id, str(bm1.__dict__))
+        self.assertEqual(str(bm1), strinit)
 
     def teststring(self):
         """Checks if the string method returns the correct output"""
